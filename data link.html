@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>first page</title>
+  
+  </head>
+  <body>
+  <div style="height: 195px; background-color: blue"></br></br></br><h2 style="color: White; text-align: center"><u>LEARN COMPUTER</u></h2></div> <hr style="height: 5px; background-color: lightblue" />
+  <style>
+  nav {
+            background-color: ;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            
+            margin: 5px;
+        }
+        .content {
+            padding: 20px;
+        }
+        </style>
+        
+        <nav>
+        <ul>
+            <li><a href="firstpage.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+    </nav>
+ 
+  <hr style="height: 5px; background-color: lightblue" />
+  
+  <div class="search-container">
+  <input type="text" id="search" placeholder="Search here..." style="width: 336px; height: 20px; border-radius: 10px; padding: 0 auto;">
+  <i class="fa fa-search"></i>
+</div><br/>
+<h2 style="text-align: center; color: navy;">Data Link Layer</h2>
+<img src="datalink.jpeg" style="width: 344px;" alt="image is loading...">
+
+<h3 style="color:blue">Data Link Layer</h3>
+
+<p>In the OSI model, the data link layer is a 4th layer from the top and 2nd layer from the bottom.</p>
+
+<p>The communication channel that connects the adjacent nodes is known as links, and in order to move the datagram from source to the destination, the datagram must be moved across an individual link.</p>
+
+<p>The main responsibility of the Data Link Layer is to transfer the datagram across an individual link.</p>
+
+<p>The Data link layer protocol defines the format of the packet exchanged across the nodes as well as the actions such as Error detection, retransmission, flow control, and random access.</p>
+
+<p>The Data Link Layer protocols are Ethernet, token ring, FDDI and PPP.</p>
+
+<p>An important characteristic of a Data Link Layer is that datagram can be handled by different link layer protocols on different links in a path. For example, the datagram is handled by Ethernet on the first link, PPP on the second link.</p>
+
+<p style="color: blue">Following services are provided by the Data Link Layer:</p>
+
+<p><b>Framing & Link access:</b> Data Link Layer protocols encapsulate each network frame within a Link layer frame before the transmission across the link. A frame consists of a data field in which network layer datagram is inserted and a number of data fields. It specifies the structure of the frame as well as a channel access protocol by which frame is to be transmitted over the link.</p>
+
+<p><b>Reliable delivery:</b> Data Link Layer provides a reliable delivery service, i.e., transmits the network layer datagram without any error. A reliable delivery service is accomplished with transmissions and acknowledgements. A data link layer mainly provides the reliable delivery service over the links as they have higher error rates and they can be corrected locally, link at which an error occurs rather than forcing to retransmit the data.</p>
+
+<p><b>Flow control:</b> A receiving node can receive the frames at a faster rate than it can process the frame. Without flow control, the receiver's buffer can overflow, and frames can get lost. To overcome this problem, the data link layer uses the flow control to prevent the sending node on one side of the link from overwhelming the receiving node on another side of the link.</p>
+
+<p><b>Error detection:</b> Errors can be introduced by signal attenuation and noise. Data Link Layer protocol provides a mechanism to detect one or more errors. This is achieved by adding error detection bits in the frame and then receiving node can perform an error check.</p>
+
+<p><b>Error correction:</b> Error correction is similar to the Error detection, except that receiving node not only detect the errors but also determine where the errors have occurred in the frame.</p>
+
+<p><b>Half-Duplex & Full-Duplex:</b> In a Full-Duplex mode, both the nodes can transmit the data at the same time. In a Half-Duplex mode, only one node can transmit the data at the same time.</p>
+
+<h3>Errors</h3>
+
+<p>When bits are transmitted over the computer network, they are subject to get corrupted due to interference and network problems. The corrupted bits leads to spurious data being received by the destination and are called errors.</p>
+
+<h3>Types of Errors</h3>
+
+<p>Errors can be of three types, namely single bit errors, multiple bit errors, and burst errors.</p>
+
+<p>Single bit error − In the received frame, only one bit has been corrupted, i.e. either changed from 0 to 1 or from 1 to 0.</p>
+
+<p>Multiple bits error − In the received frame, more than one bits are corrupted.</p>
+
+<p>Burst error − In the received frame, more than one consecutive bits are corrupted.</p>
+
+<p>Error Control</p>
+
+<p>Error control can be done in two ways</p>
+
+<p>Error detection − Error detection involves checking whether any error has occurred or not. The number of error bits and the type of error does not matter.</p>
+
+<p>Error correction − Error correction involves ascertaining the exact number of bits that has been corrupted and the location of the corrupted bits.</p>
+
+<p>For both error detection and error correction, the sender needs to send some additional bits along with the data bits. The receiver performs necessary checks based upon the additional redundant bits. If it finds that the data is free from errors, it removes the redundant bits before passing the message to the upper layers.</p>
+
+<h3>Error Detection Techniques</h3>
+
+<p style="color:navy">There are three main techniques for detecting errors in frames: Parity Check, Checksum and Cyclic Redundancy Check (CRC).</p>
+
+<h3>Parity Check</h3>
+
+<p>The parity check is done by adding an extra bit, called parity bit to the data to make a number of 1s either even in case of even parity or odd in case of odd parity.</p>
+
+<p>While creating a frame, the sender counts the number of 1s in it and adds the parity bit in the following way</p>
+
+<p>In case of even parity: If a number of 1s is even then parity bit value is 0. If the number of 1s is odd then parity bit value is 1.</p>
+
+<p>On receiving a frame, the receiver counts the number of 1s in it. In case of even parity check, if the count of 1s is even, the frame is accepted, otherwise, it is rejected. A similar rule is adopted for odd parity check.</p>
+
+<p>The parity check is suitable for single bit error detection only.</p>
+
+<h3>Checksum</h3>
+
+<p>In this error detection scheme, the following procedure is applied</p>
+
+<p>Data is divided into fixed sized frames or segments.</p>
+
+<p>The sender adds the segments using 1’s complement arithmetic to get the sum. It then complements the sum to get the checksum and sends it along with the data frames.</p>
+
+<p>The receiver adds the incoming segments along with the checksum using 1’s complement arithmetic to get the sum and then complements it.</p>
+
+<p>If the result is zero, the received frames are accepted; otherwise, they are discarded.</p>
+
+<h3>Cyclic Redundancy Check (CRC)</h3>
+
+<p>Cyclic Redundancy Check (CRC) involves binary division of the data bits being sent by a predetermined divisor agreed upon by the communicating system. The divisor is generated using polynomials.</p>
+
+<p>Here, the sender performs binary division of the data segment by the divisor. It then appends the remainder called CRC bits to the end of the data segment. This makes the resulting data unit exactly divisible by the divisor.</p>
+
+<p>The receiver divides the incoming data unit by the divisor. If there is no remainder, the data unit is assumed to be correct and is accepted. Otherwise, it is understood that the data is corrupted and is therefore rejected.</p>
+
+<h3>Error Correction Techniques</h3>
+
+<p>Error correction techniques find out the exact number of bits that have been corrupted and as well as their locations. There are two principle ways</p>
+
+<p>Backward Error Correction (Retransmission) −  If the receiver detects an error in the incoming frame, it requests the sender to retransmit the frame. It is a relatively simple technique. But it can be efficiently used only where retransmitting is not expensive as in fiber optics and the time for retransmission is low relative to the requirements of the application.</p>
+
+<p>Forward Error Correction −  If the receiver detects some error in the incoming frame, it executes error-correcting code that generates the actual frame. This saves bandwidth required for retransmission. It is inevitable in real-time systems. However, if there are too many errors, the frames need to be retransmitted.</p>
+
+<p style="color:navy">The four main error correction codes are</p>
+<ul>
+<li>Hamming Codes</li>
+
+<li>Binary Convolution Code</li>
+
+<li>Reed – Solomon Code</li>
+
+<li>Low-Density Parity-Check Code</li>
+
+<li>Data Link Controls</li>
+</ul>
+<p>Data Link Control is the service provided by the Data Link Layer to provide reliable data transfer over the physical medium. For example, In the half-duplex transmission mode, one device can only transmit the data at a time. If both the devices at the end of the links transmit the data simultaneously, they will collide and leads to the loss of the information. The Data link layer provides the coordination among the devices so that no collision occurs.</p>
+
+<p>The Data link layer provides three functions:</p>
+<ol>
+<li>Line discipline</li>
+
+<li>Flow Control</li>
+
+<li>Error Control</li>
+
+<li>Line Discipline</li>
+</ol>
+<p>Line Discipline is a functionality of the Data link layer that provides the coordination among the link systems. It determines which device can send, and when it can send the data.</p>
+
+<p>Line Discipline can be achieved in two ways:</p>
+
+<p>ENQ/ACK</p>
+
+<p>Poll/select</p>
+
+<h3>END/ACK</h3>
+
+<p>END/ACK stands for Enquiry/Acknowledgement is used when there is no wrong receiver available on the link and having a dedicated path between the two devices so that the device capable of receiving the transmission is the intended one.</p>
+
+<p>END/ACK coordinates which device will start the transmission and whether the recipient is ready or not.</p>
+
+<h3>Poll/Select</h3>
+
+<p>The Poll/Select method of line discipline works with those topologies where one device is designated as a primary station, and other devices are secondary stations.</p>
+
+<p>Flow Control</p>
+
+<p>It is a set of procedures that tells the sender how much data it can transmit before the data overwhelms the receiver.</p>
+
+<p>The receiving device has limited speed and limited memory to store the data. Therefore, the receiving device must be able to inform the sending device to stop the transmission temporarily before the limits are reached.</p>
+
+<p>It requires a buffer, a block of memory for storing the information until they are processed.</p>
+
+<p>Two methods have been developed to control the flow of data:</p>
+
+<p>Stop-and-wait</p>
+
+<p>Sliding window</p>
+
+<p>Stop-and-wait</p>
+
+<p>In the Stop-and-wait method, the sender waits for an acknowledgement after every frame it sends.</p>
+
+<p>When acknowledgement is received, then only next frame is sent. The process of alternately sending and waiting of a frame continues until the sender transmits the EOT (End of transmission) frame.</p>
+
+<p>Advantage of Stop-and-wait</p>
+
+<p>The Stop-and-wait method is simple as each frame is checked and acknowledged before the next frame is sent.</p>
+
+<p>Disadvantage of Stop-and-wait</p>
+
+<p>Stop-and-wait technique is inefficient to use as each frame must travel across all the way to the receiver, and an acknowledgement travels all the way before the next frame is sent. Each frame sent and received uses the entire time needed to traverse the link.</p>
+
+<p>Sliding Window</p>
+
+<p>The Sliding Window is a method of flow control in which a sender can transmit the several frames before getting an acknowledgement.</p>
+
+<p>In Sliding Window Control, multiple frames can be sent one after the another due to which capacity of the communication channel can be utilized efficiently.</p>
+
+<p>A single ACK acknowledge multiple frames.</p>
+
+<p>Sliding Window refers to imaginary boxes at both the sender and receiver end.</p>
+
+<p>The window can hold the frames at either end, and it provides the upper limit on the number of frames that can be transmitted before the acknowledgement.</p>
+
+<p>Frames can be acknowledged even when the window is not completely filled.</p>
+
+<p>The window has a specific size in which they are numbered as modulo-n means that they are numbered from 0 to n-1. For example, if n = 8, the frames are numbered from 0,1,2,3,4,5,6,7,0,1,2,3,4,5,6,7,0,1.....</p>
+
+<p>The size of the window is represented as n-1. Therefore, maximum n-1 frames can be sent before acknowledgement.</p>
+
+<p>When the receiver sends the ACK, it includes the number of the next frame that it wants to receive. For example, to acknowledge the string of frames ending with frame number 4, the receiver will send the ACK containing the number 5. When the sender sees the ACK with the number 5, it got to know that the frames from 0 through 4 have been received.</p>
+
+<p>Sender Window</p>
+
+<p>At the beginning of a transmission, the sender window contains n-1 frames, and when they are sent out, the left boundary moves inward shrinking the size of the window. For example, if the size of the window is w if three frames are sent out, then the number of frames left out in the sender window is w-3.</p>
+
+<p>Once the ACK has arrived, then the sender window expands to the number which will be equal to the number of frames acknowledged by ACK.</p>
+
+<p>For example, the size of the window is 7, and if frames 0 through 4 have been sent out and no acknowledgement has arrived, then the sender window contains only two frames, i.e., 5 and 6. Now, if ACK has arrived with a number 4 which means that 0 through 3 frames have arrived undamaged and the sender window is expanded to include the next four frames. Therefore, the sender window contains six frames (5,6,7,0,1,2).</p>
+
+<p>Receiver Window</p>
+
+<p>At the beginning of transmission, the receiver window does not contain n frames, but it contains n-1 spaces for frames.</p>
+
+<p>When the new frame arrives, the size of the window shrinks.</p>
+
+<p>The receiver window does not represent the number of frames received, but it represents the number of frames that can be received before an ACK is sent. For example, the size of the window is w, if three frames are received then the number of spaces available in the window is (w-3).</p>
+
+<p>Once the acknowledgement is sent, the receiver window expands by the number equal to the number of frames acknowledged.</p>
+
+<p>Suppose the size of the window is 7 means that the receiver window contains seven spaces for seven frames. If the one frame is received, then the receiver window shrinks and moving the boundary from 0 to 1. In this way, window shrinks one by one, so window now contains the six spaces. If frames from 0 through 4 have sent, then the window contains two spaces before an acknowledgement is sent.</p>
+
+<h3>Error Control</h3>
+
+<p>Error Control is a technique of error detection and retransmission.</p>
+
+<p>Categories of Error Control:</p>
+
+<p>Stop-and-wait ARQ</p>
+
+<p>Stop-and-wait ARQ is a technique used to retransmit the data in case of damaged or lost frames.</p>
+
+<p>This technique works on the principle that the sender will not transmit the next frame until it receives the acknowledgement of the last transmitted frame.</p>
+
+<p>Four features are required for the retransmission:</p>
+
+<p>The sending device keeps a copy of the last transmitted frame until the acknowledgement is received. Keeping the copy allows the sender to retransmit the data if the frame is not received correctly.</p>
+
+<p>Both the data frames and the ACK frames are numbered alternately 0 and 1 so that they can be identified individually. Suppose data 1 frame acknowledges the data 0 frame means that the data 0 frame has been arrived correctly and expects to receive data 1 frame.</p>
+
+<p>If an error occurs in the last transmitted frame, then the receiver sends the NAK frame which is not numbered. On receiving the NAK frame, sender retransmits the data.</p>
+
+<p>It works with the timer. If the acknowledgement is not received within the allotted time, then the sender assumes that the frame is lost during the transmission, so it will retransmit the frame.</p>
+
+<h3>Two possibilities of the retransmission:</h3>
+
+<p><b>Damaged Frame:</b> When the receiver receives a damaged frame, i.e., the frame contains an error, then it returns the NAK frame. For example, when the data 0 frame is sent, and then the receiver sends the ACK 1 frame means that the data 0 has arrived correctly, and transmits the data 1 frame. The sender transmits the next frame: data 1. It reaches undamaged, and the receiver returns ACK 0. The sender transmits the next frame: data 0. The receiver reports an error and returns the NAK frame. The sender retransmits the data 0 frame.</p>
+
+<p><b>Lost Frame:</b> Sender is equipped with the timer and starts when the frame is transmitted. Sometimes the frame has not arrived at the receiving end so that it can be acknowledged neither positively nor negatively. The sender waits for acknowledgement until the timer goes off. If the timer goes off, it retransmits the last transmitted frame.</p>
+
+<h3>Sliding Window ARQ</h3>
+
+<p>SlidingWindow ARQ is a technique used for continuous transmission error control.</p>
+
+<h3>Three Features used for retransmission:</h3>
+
+<p>In this case, the sender keeps the copies of all the transmitted frames until they have been acknowledged. Suppose the frames from 0 through 4 have been transmitted, and the last acknowledgement was for frame 2, the sender has to keep the copies of frames 3 and 4 until they receive correctly.</p>
+
+<p>The receiver can send either NAK or ACK depending on the conditions. The NAK frame tells the sender that the data have been received damaged. Since the sliding window is a continuous transmission mechanism, both ACK and NAK must be numbered for the identification of a frame. The ACK frame consists of a number that represents the next frame which the receiver expects to receive. The NAK frame consists of a number that represents the damaged frame.</p>
+
+<p>The sliding window ARQ is equipped with the timer to handle the lost acknowledgements. Suppose then n-1 frames have been sent before receiving any acknowledgement. The sender waits for the acknowledgement, so it starts the timer and waits before sending any more. If the allotted time runs out, the sender retransmits one or all the frames depending upon the protocol used.</p>
+
+<h3>Two protocols used in sliding window ARQ:</h3>
+
+<p>Go-Back-n ARQ: In Go-Back-N ARQ protocol, if one frame is lost or damaged, then it retransmits all the frames after which it does not receive the positive ACK.</p>
+
+<p>Three possibilities can occur for retransmission:</p>
+
+<p><b>Damaged Frame:</b> When the frame is damaged, then the receiver sends a NAK frame.</p>
+
+<p><b>Lost Data Frame:</b> In Sliding window protocols, data frames are sent sequentially. If any of the frames is lost, then the next frame arrive at the receiver is out of sequence. The receiver checks the sequence number of each of the frame, discovers the frame that has been skipped, and returns the NAK for the missing frame. The sending device retransmits the frame indicated by NAK as well as the frames transmitted after the lost frame.</p>
+
+<p><b>Lost Acknowledgement:</b> The sender can send as many frames as the windows allow before waiting for any acknowledgement. Once the limit of the window is reached, the sender has no more frames to send; it must wait for the acknowledgement. If the acknowledgement is lost, then the sender could wait forever. To avoid such situation, the sender is equipped with the timer that starts counting whenever the window capacity is reached. If the acknowledgement has not been received within the time limit, then the sender retransmits the frame since the last ACK.</p>
+
+<h3>Selective-Reject ARQ</h3>
+
+<p>Selective-Reject ARQ technique is more efficient than Go-Back-n ARQ.</p>
+
+<p>In this technique, only those frames are retransmitted for which negative acknowledgement (NAK) has been received.</p>
+
+<p>The receiver storage buffer keeps all the damaged frames on hold until the frame in error is correctly received.</p>
+
+<p>The receiver must have an appropriate logic for reinserting the frames in a correct order.</p>
+
+<p>The sender must consist of a searching mechanism that selects only the requested frame for retransmission.</p>
+</body>
+</html>

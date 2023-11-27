@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>first page</title>
+  
+  </head>
+  <body>
+  <div style="height: 195px; background-color: blue"></br></br></br><h2 style="color: White; text-align: center"><u>LEARN COMPUTER</u></h2></div> <hr style="height: 5px; background-color: lightblue" />
+  <style>
+  nav {
+            background-color: ;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            
+            margin: 5px;
+        }
+        .content {
+            padding: 20px;
+        }
+        </style>
+        <nav>
+        <ul>
+            <li><a href="firstpage.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+    </nav>
+ 
+  <hr style="height: 5px; background-color: lightblue" />
+  
+  <div class="search-container">
+  <input type="text" id="search" placeholder="Search here..." style="width: 336px; height: 20px; border-radius: 10px; padding: 0 auto;">
+  <i class="fa fa-search"></i>
+</div><br/>
+  <h2 style="text-align: center; color: navy;">Data Link Layer</h2>
+  <img src="learn.jpg" width="344px" alt="this is our poster">
+
+
+<h3 style="color:navy">Application Layer</h3>
+
+<p>The application layer in the OSI model is the closest layer to the end user which means that the application layer and end user can interact directly with the software application. The application layer programs are based on client and servers.</p>
+
+<h4>The Application layer includes the following functions:</h4>
+
+<p><b>Identifying communication partners:</b> The application layer identifies the availability of communication partners for an application with data to transmit.</p>
+
+<p><b>Determining resource availability:</b> The application layer determines whether sufficient network resources are available for the requested communication.</p>
+
+<p><b>Synchronizing communication:</b> All the communications occur between the applications requires cooperation which is managed by an application layer.</p>
+
+<h4>Services of Application Layers</h4>
+
+<p><b>Network Virtual terminal:</b> An application layer allows a user to log on to a remote host. To do so, the application creates a software emulation of a terminal at the remote host. The user's computer talks to the software terminal, which in turn, talks to the host. The remote host thinks that it is communicating with one of its own terminals, so it allows the user to log on.</p>
+
+<p><b>File Transfer, Access, and Management (FTAM):</b> An application allows a user to access files in a remote computer, to retrieve files from a computer and to manage files in a remote computer. FTAM defines a hierarchical virtual file in terms of file structure, file attributes and the kind of operations performed on the files and their attributes.</p>
+
+<p><b>Addressing:</b> To obtain communication between client and server, there is a need for addressing. When a client made a request to the server, the request contains the server address and its own address. The server response to the client request, the request contains the destination address, i.e., client address. To achieve this kind of addressing, DNS is used.</p>
+
+<p><b>Mail Services:</b> An application layer provides Email forwarding and storage.</p>
+
+<p><b>Directory Services:</b> An application contains a distributed database that provides access for global information about various objects and services.</p>
+
+<p style="color:blue">Authentication: It authenticates the sender or receiver's message or both.</p>
+
+ 
+
+<h3>Protocols in Application Layer</h3>
+
+<h4>Application Layer:</h4>
+
+<p>The application layer is present at the top of the OSI model. It is the layer through which users interact. It provides services to the user.</p>
+
+<h3>Application Layer protocol:</h3>
+
+<h4>1. TELNET:</h4>
+
+Telnet stands for the TELecomunications NETwork. It helps in terminal emulation. It allows Telnet client to access the resources of the Telnet server. It is used for managing the files on the internet. It is used for initial set up of devices like switches. The telnet command is a command that uses the Telnet protocol to communicate with a remote device or system. Port number of telnet is 23.
+Command
+
+telnet [\\RemoteServer] \\RemoteServer : Specifies the name of the server to which you want to connect
+
+2. FTP:
+
+FTP stands for file transfer protocol. It is the protocol that actually lets us transfer files.It can facilitate this between any two machines using it. But FTP is not just a protocol but it is also a program.FTP promotes sharing of files via remote computers with reliable and efficient data transfer. Port number for FTP is 20 for data and 21 for control.
+
+Command
+
+ftp machinename
+
+3. TFTP:
+
+The Trivial File Transfer Protocol (TFTP) is the stripped-down, stock version of FTP, but it’s the protocol of choice if you know exactly what you want and where to find it. It’s a technology for transferring files between network devices and is a simplified version of FTP
+
+Command
+
+tftp [ options... ] [host [port]] [-c command]
+
+4. NFS:
+
+It stands for network file system.It allows remote hosts to mount file systems over a network and interact with those file systems as though they are mounted locally. This enables system administrators to consolidate resources onto centralized servers on the network.
+
+Command
+
+service nfs start
+
+5. SMTP:
+
+It stands for Simple Mail Transfer Protocol. It is a part of the TCP/IP protocol. Using a process called “store and forward,” SMTP moves your email on and across networks. It works closely with something called the Mail Transfer Agent (MTA) to send your communication to the right computer and email inbox. Port number for SMTP is 25.
+
+Command
+
+MAIL FROM:<mail@abc.com?
+
+6. LPD:
+
+It stands for Line Printer Daemon.It is designed for printer sharing.It is the part that receives and processes the request. A “daemon” is a server or agent.
+
+Command
+
+lpd [ -d ] [ -l ] [ -D DebugOutputFile]
+
+7. X window:
+
+It defines a protocol for the writing of graphical user interface–based client/server applications. The idea is to allow a program, called a client, to run on one computer. It is primarily used in networks of interconnected mainframes.
+
+Command
+
+Run xdm in runlevel 5
+
+8. SNMP:
+
+It stands for Simple Network Management Protocol. It gathers data by polling the devices on
+the network from a management station at fixed or random intervals, requiring
+them to disclose certain information. It is a way that servers can share information about their current state, and also a channel through which an administrate can modify pre-defined values. Port number of SNMP is 161(TCP) and 162(UDP).
+Command
+
+snmpget -mALL -v1 -cpublic snmp_agent_Ip_address sysName.0
+
+9. DNS:
+
+It stands for Domain Name System. Every time you use a domain name, therefore, a DNS service must translate the name into the corresponding IP address. For example, the domain name www.abc.com might translate to 198.105.232.4.
+Port number for DNS is 53.
+Command
+
+ipconfig /flushdns
+
+10. DHCP:
+
+It stands for Dynamic Host Configuration Protocol (DHCP).It gives IP addresses to hosts.There is a lot of information a DHCP server can provide to a host when the host is registering for an IP address with the DHCP server. Port number for DHCP is 67, 68.
+
+Command
+
+clear ip dhcp binding {address | * }
+
+
+
+
+ 
+
+Network Services
+
+In computer networking, a network service is an application running at the network application layer and above, that provides data storage, manipulation, presentation, communication or other capability which is often implemented using a client-server or peer-to-peer architecture based on application layer network protocols.
+
+Directory Services
+
+These services are mapping between name and its value, which can be variable value or fixed. This software system helps to store the information, organize it, and provides various means of accessing it.
+
+Accounting
+
+In an organization, a number of users have their user names and passwords mapped to them. Directory Services provide means of storing this information in cryptic form and make available when requested.
+
+Authentication and Authorization
+
+User credentials are checked to authenticate a user at the time of login and/or periodically. User accounts can be set into hierarchical structure and their access to resources can be controlled using authorization schemes.
+
+Domain Name Services
+
+DNS is widely used and one of the essential services on which internet works. This system maps IP addresses to domain names, which are easier to remember and recall than IP addresses. Because network operates with the help of IP addresses and humans tend to remember website names, the DNS provides website’s IP address which is mapped to its name from the back-end on the request of a website name from the user.
+
+File Services
+
+File services include sharing and transferring files over the network.
+
+File Sharing
+
+One of the reason which gave birth to networking was file sharing. File sharing enables its users to share their data with other users. User can upload the file to a specific server, which is accessible by all intended users. As an alternative, user can make its file shared on its own computer and provides access to intended users.
+
+File Transfer
+
+This is an activity to copy or move file from one computer to another computer or to multiple computers, with help of underlying network. Network enables its user to locate other users in the network and transfers files.
+
+Communication Services
+
+Email
+
+Electronic mail is a communication method and something a computer user cannot work without. This is the basis of today’s internet features. Email system has one or more email servers. All its users are provided with unique IDs. When a user sends email to other user, it is actually transferred between users with help of email server.
+
+Social Networking
+
+Recent technologies have made technical life social. The computer savvy peoples, can find other known peoples or friends, can connect with them, and can share thoughts, pictures, and videos.
+
+Internet Chat
+
+Internet chat provides instant text transfer services between two hosts. Two or more people can communicate with each other using text based Internet Relay Chat services. These days, voice chat and video chat are very common.
+
+Discussion Boards
+
+Discussion boards provide a mechanism to connect multiple peoples with same interests.It enables the users to put queries, questions, suggestions etc. which can be seen by all other users. Other may respond as well.
+
+Remote Access
+
+This service enables user to access the data residing on the remote computer. This feature is known as Remote desktop. This can be done via some remote device, e.g. mobile phone or home computer.
+
+Application Services
+
+These are nothing but providing network based services to the users such as web services, database managing, and resource sharing.
+
+Resource Sharing
+
+To use resources efficiently and economically, network provides a mean to share them. This may include Servers, Printers, and Storage Media etc.
+
+Databases
+
+This application service is one of the most important services. It stores data and information, processes it, and enables the users to retrieve it efficiently by using queries. Databases help organizations to make decisions based on statistics.
+
+Web Services
+
+World Wide Web has become the synonym for internet.It is used to connect to the internet, and access files and information services provided by the internet servers.
+
+Client and Server model
+
+A client and server networking model is a model in which computers such as servers provide the network services to the other computers such as clients to perform a user based tasks. This model is known as client-server networking model.
+
+The application programs using the client-server model should follow the given below strategies:
+
+An application program is known as a client program, running on the local machine that requests for a service from an application program known as a server program, running on the remote machine.
+
+A client program runs only when it requests for a service from the server while the server program runs all time as it does not know when its service is required.
+
+A server provides a service for many clients not just for a single client. Therefore, we can say that client-server follows the many-to-one relationship. Many clients can use the service of one server.
+
+Services are required frequently, and many users have a specific client-server application program. For example, the client-server application program allows the user to access the files, send e-mail, and so on. If the services are more customized, then we should have one generic application program that allows the user to access the services available on the remote computer.
+
+Client
+
+A client is a program that runs on the local machine requesting service from the server. A client program is a finite program means that the service started by the user and terminates when the service is completed.
+
+Server
+
+A server is a program that runs on the remote machine providing services to the clients. When the client requests for a service, then the server opens the door for the incoming requests, but it never initiates the service.
+
+A server program is an infinite program means that when it starts, it runs infinitely unless the problem arises. The server waits for the incoming requests from the clients. When the request arrives at the server, then it responds to the request.
+
+Advantages of Client-server networks:
+
+Centralized: Centralized back-up is possible in client-server networks, i.e., all the data is stored in a server.
+
+Security: These networks are more secure as all the shared resources are centrally administered.
+
+Performance: The use of the dedicated server increases the speed of sharing resources. This increases the performance of the overall system.
+
+Scalability: We can increase the number of clients and servers separately, i.e., the new element can be added, or we can add a new node in a network at any time.
+
+Disadvantages of Client-Server network:
+
+Traffic Congestion is a big problem in Client/Server networks. When a large number of clients send requests to the same server may cause the problem of Traffic congestion.
+
+It does not have a robustness of a network, i.e., when the server is down, then the client requests cannot be met.
+
+A client/server network is very decisive. Sometimes, regular computer hardware does not serve a certain number of clients. In such situations, specific hardware is required at the server side to complete the work.
+
+Sometimes the resources exist in the server but may not exist in the client. For example, If the application is web, then we cannot take the print out directly on printers without taking out the print view window on the web.
+
+ 
+

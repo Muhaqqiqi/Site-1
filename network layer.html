@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>first page</title>
+  
+  </head>
+  <body>
+  <div style="height: 195px; background-color: blue"></br></br></br><h2 style="color: White; text-align: center"><u>LEARN COMPUTER</u></h2></div> <hr style="height: 5px; background-color: lightblue" />
+  <style>
+  nav {
+            background-color: ;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            
+            margin: 5px;
+        }
+        .content {
+            padding: 20px;
+        }
+        </style>
+        
+        <nav>
+        <ul>
+            <li><a href="http://localhost:8080/firstpage.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+    </nav>
+ 
+  <hr style="height: 5px; background-color: lightblue" />
+  
+  <div class="search-container">
+  <input type="text" id="search" placeholder="Search here..." style="width: 336px; height: 20px; border-radius: 10px; padding: 0 auto;">
+  <i class="fa fa-search"></i>
+</div><br/>
+
+<h2 style="text-align: center; color: navy;">Network Layer</h2>
+<img src="network layer.jpeg" style="width: 344px" alt="image is loading...">
+
+
+<h3 style="color: navy">Network Layer</h3>
+
+<p>The Network Layer is the third layer of the OSI model.</p>
+
+<p>It handles the service requests from the transport layer and further forwards the service request to the data link layer.</p>
+
+<p>The network layer translates the logical addresses into physical addresses</p>
+
+<p>It determines the route from the source to the destination and also manages the traffic problems such as switching, routing and controls the congestion of data packets.</p>
+
+<p>The main role of the network layer is to move the packets from sending host to the receiving host.</p>
+
+<h4 style="color: navy">The main functions performed by the network layer are:</h4>
+
+<p><b>Routing:</b> When a packet reaches the router's input link, the router will move the packets to the router's output link. For example, a packet from S1 to R1 must be forwarded to the next router on the path to S2.</p>
+
+<p><b>Logical Addressing:</b> The data link layer implements the physical addressing and network layer implements the logical addressing. Logical addressing is also used to distinguish between source and destination system. The network layer adds a header to the packet which includes the logical addresses of both the sender and the receiver.</p>
+
+<p><b>Internetworking:</b> This is the main role of the network layer that it provides the logical connection between different types of networks.</p>
+
+<p><b>Fragmentation:</b> The fragmentation is a process of breaking the packets into the smallest individual data units that travel through different networks.</p>
+
+<h4 style="color: navy">Forwarding & Routing</h4>
+
+<p>In Network layer, a router is used to forward the packets. Every router has a forwarding table. A router forwards a packet by examining a packet's header field and then using the header field value to index into the forwarding table. The value stored in the forwarding table corresponding to the header field value indicates the router's outgoing interface link to which the packet is to be forwarded.</p>
+
+<p>For example, the router with a header field value of 0111 arrives at a router, and then router indexes this header value into the forwarding table that determines the output link interface is 2. The router forwards the packet to the interface 2. The routing algorithm determines the values that are inserted in the forwarding table. The routing algorithm can be centralized or decentralized.</p>
+
+<p>Services Provided by the Network Layer</p>
+
+<p><b>Guaranteed delivery:</b> This layer provides the service which guarantees that the packet will arrive at its destination.</p>
+
+<p>Guaranteed delivery with bounded delay:</b> This service guarantees that the packet will be delivered within a specified host-to-host delay bound.</p>
+
+<p><b>In-Order packets:</b> This service ensures that the packet arrives at the destination in the order in which they are sent.</p>
+
+<p><b>Guaranteed max jitter:</b> This service ensures that the amount of time taken between two successive transmissions at the sender is equal to the time between their receipt at the destination.</p>
+
+<p>Security services: The network layer provides security by using a session key between the source and destination host. The network layer in the source host encrypts the payloads of datagrams being sent to the destination host. The network layer in the destination host would then decrypt the payload. In such a way, the network layer maintains the data integrity and source authentication services.</p>
+
+<h4 style="color: navy">Design Issues with Network Layer</h4>
+
+<p>A key design issue is determining how packets are routed from source to destination. Routes can be based on static tables that are wired into the network and rarely changed. They can also be highly dynamic, being determined anew for each packet, to reflect the current network load.</p>
+
+<p>If too many packets are present in the subnet at the same time, they will get into one another's way, forming bottlenecks. The control of such congestion also belongs to the network layer.</p>
+
+<p>Moreover, the quality of service provided(delay, transmit time, jitter, etc) is also a network layer issue.</p>
+
+<p>When a packet has to travel from one network to another to get to its destination, many problems can arise such as:</p>
+
+<ul>
+<li>The addressing used by the second network may be different from the first one.</li>
+
+<li>The second one may not accept the packet at all because it is too large.</li>
+
+<li>The protocols may differ, and so on.</li>
+
+<li>It is up to the network layer to overcome all these problems to allow heterogeneous networks to be interconnected.</li>
+</ul>
+ 
+
+<h4 style="color: navy">Network Layer Protocols</h4>
+
+<p>TCP/IP supports the following protocols:</p>
+
+<p>ARP</p>
+
+<p>ARP stands for Address Resolution Protocol.</p>
+
+<p>It is used to associate an IP address with the MAC address.</p>
+
+<p>Each device on the network is recognized by the MAC address imprinted on the NIC. Therefore, we can say that devices need the MAC address for communication on a local area network. MAC address can be changed easily. For example, if the NIC on a particular machine fails, the MAC address changes but IP address does not change. ARP is used to find the MAC address of the node when an internet address is known.</p>
+
+<h4>How ARP works</h4>
+
+<p>If the host wants to know the physical address of another host on its network, then it sends an ARP query packet that includes the IP address and broadcast it over the network. Every host on the network receives and processes the ARP packet, but only the intended recipient recognizes the IP address and sends back the physical address. The host holding the datagram adds the physical address to the cache memory and to the datagram header, then sends back to the sender.</p>
+
+<p>Steps taken by ARP protocol</p>
+
+<p>If a device wants to communicate with another device, the following steps are taken by the device:</p>
+
+<p>The device will first look at its internet list, called the ARP cache to check whether an IP address contains a matching MAC address or not. It will check the ARP cache in command prompt by using a command arp-a.</p>
+
+<p>If ARP cache is empty, then device broadcast the message to the entire network asking each device for a matching MAC address.</p>
+
+<p>The device that has the matching IP address will then respond back to the sender with its MAC address</p>
+
+<p>Once the MAC address is received by the device, then the communication can take place between two devices.</p>
+
+<p>If the device receives the MAC address, then the MAC address gets stored in the ARP cache. We can check the ARP cache in command prompt by using a command arp -a.</p>
+
+<h4>There are two types of ARP entries:</h4>
+
+<p><b>Dynamic entry:</b> It is an entry which is created automatically when the sender broadcast its message to the entire network. Dynamic entries are not permanent, and they are removed periodically.</p>
+
+<p><b>Static entry:</b> It is an entry where someone manually enters the IP to MAC address association by using the ARP command utility.</p>
+
+<h4>RARP</h4>
+
+<p>RARP stands for Reverse Address Resolution Protocol.</p>
+
+<p>If the host wants to know its IP address, then it broadcast the RARP query packet that contains its physical address to the entire network. A RARP server on the network recognizes the RARP packet and responds back with the host IP address.</p>
+
+<p>The protocol which is used to obtain the IP address from a server is known as Reverse Address Resolution Protocol.</p>
+
+<p>The message format of the RARP protocol is similar to the ARP protocol.</p>
+
+<p>Like ARP frame, RARP frame is sent from one machine to another encapsulated in the data portion of a frame.</p>
+
+<h4>ICMP</h4>
+
+<p>ICMP stands for Internet Control Message Protocol.</p>
+
+<p>The ICMP is a network layer protocol used by hosts and routers to send the notifications of IP datagram problems back to the sender.</p>
+
+<p>ICMP uses echo test/reply to check whether the destination is reachable and responding.</p>
+
+<p>ICMP handles both control and error messages, but its main function is to report the error but not to correct them.</p>
+
+<p>An IP datagram contains the addresses of both source and destination, but it does not know the address of the previous router through which it has been passed. Due to this reason, ICMP can only send the messages to the source, but not to the immediate routers.</p>
+
+<p>ICMP protocol communicates the error messages to the sender. ICMP messages cause the errors to be returned back to the user processes.</p>
+
+<p>ICMP messages are transmitted within IP datagram.</p>
+
+<h4 style="color: navy">Error Reporting</h4>
+
+<p>ICMP protocol reports the error messages to the sender.</p>
+
+<p>Five types of errors are handled by the ICMP protocol:</p>
+
+<ol>
+<li>Destination unreachable</li>
+
+<li>Source Quench</li>
+
+<li>Time Exceeded</li>
+
+<li>Parameter problems</li>
+
+<li>Redirection</li>
+</ol>
+
+<p><b>Destination unreachable:</b> The message of "Destination Unreachable" is sent from receiver to the sender when destination cannot be reached, or packet is discarded when the destination is not reachable.</p>
+
+<p><b>Source Quench:</b> The purpose of the source quench message is congestion control. The message sent from the congested router to the source host to reduce the transmission rate. ICMP will take the IP of the discarded packet and then add the source quench message to the IP datagram to inform the source host to reduce its transmission rate. The source host will reduce the transmission rate so that the router will be free from congestion.</p>
+
+<p><b>Time Exceeded:</b> Time Exceeded is also known as "Time-To-Live". It is a parameter that defines how long a packet should live before it would be discarded.</p>
+
+<p>There are two ways when Time Exceeded message can be generated:</p>
+
+<p>Sometimes packet discarded due to some bad routing implementation, and this causes the looping issue and network congestion. Due to the looping issue, the value of TTL keeps on decrementing, and when it reaches zero, the router discards the datagram. However, when the datagram is discarded by the router, the time exceeded message will be sent by the router to the source host.</p>
+
+<p>When destination host does not receive all the fragments in a certain time limit, then the received fragments are also discarded, and the destination host sends time Exceeded message to the source host.</p>
+
+<p><b>Parameter problems:</b> When a router or host discovers any missing value in the IP datagram, the router discards the datagram, and the "parameter problem" message is sent back to the source host.</p>
+
+<p><b>Redirection:</b> Redirection message is generated when host consists of a small routing table. When the host consists of a limited number of entries due to which it sends the datagram to a wrong router. The router that receives a datagram will forward a datagram to a correct router and also sends the "Redirection message" to the host to update its routing table.</p>
+
+<h4>IGMP</h4>
+
+<p>IGMP stands for Internet Group Message Protocol.</p>
+
+<p>The IP protocol supports two types of communication:</p>
+
+<p><b>1. Unicasting:</b> It is a communication between one sender and one receiver. Therefore, we can say that it is one-to-one communication.</p>
+
+<p><b>2. Multicasting:</b> Sometimes the sender wants to send the same message to a large number of receivers simultaneously. This process is known as multicasting which has one-to-many communication.</p>
+
+<p>The IGMP protocol is used by the hosts and router to support multicasting.</p>
+
+<p>The IGMP protocol is used by the hosts and router to identify the hosts in a LAN that are the members of a group.</p>
+
+<p>IGMP is a part of the IP layer, and IGMP has a fixed-size message.</p>
+
+<p>IGMP Messages</p>
+
+<p>Membership Query message</p>
+
+<p>This message is sent by a router to all hosts on a local area network to determine the set of all the multicast groups that have been joined by the host.</p>
+
+<p>It also determines whether a specific multicast group has been joined by the hosts on a attached interface.</p>
+
+<p>The group address in the query is zero since the router expects one response from a host for every group that contains one or more members on that host.</p>
+
+<p>Membership Report message</p>
+
+<p>The host responds to the membership query message with a membership report message.</p>
+
+<p>Membership report messages can also be generated by the host when a host wants to join the multicast group without waiting for a membership query message from the router.</p>
+
+<p>Membership report messages are received by a router as well as all the hosts on an attached interface.</p>
+
+<p>Each membership report message includes the multicast address of a single group that the host wants to join.</p>
+
+<p>IGMP protocol does not care which host has joined the group or how many hosts are present in a single group. It only cares whether one or more attached hosts belong to a single multicast group.</p>
+
+<p>The membership Query message sent by a router also includes a "Maximum Response time". After receiving a membership query message and before sending the membership report message, the host waits for the random amount of time from 0 to the maximum response time. If a host observes that some other attached host has sent the "Maximum Report message", then it discards its "Maximum Report message" as it knows that the attached router already knows that one or more hosts have joined a single multicast group. This process is known as feedback suppression. It provides the performance optimization, thus avoiding the unnecessary transmission of a "Membership Report message".</p>
+
+<p>Leave Report: When the host does not send the "Membership Report message", it means that the host has left the group. The host knows that there are no members in the group, so even when it receives the next query, it would not report the group.</p>
+
+ 
+
+<h4>Internetworking</h4>
+
+<p>Internetworking is combined of 2 words, inter and networking which implies an association between totally different nodes or segments. This connection area unit is established through intercessor devices akin to routers or gateway. The first term for associate degree internetwork was catenet. This interconnection is often among or between public, private, commercial, industrial, or governmental networks. Thus, associate degree internetwork could be an assortment of individual networks, connected by intermediate networking devices, that functions as one giant network. Internetworking refers to the trade, products, and procedures that meet the challenge of making and administering internetworks.</p>
+
+<p>To enable communication, every individual network node or phase is designed with similar protocol or communication logic, that is Transfer Control Protocol (TCP) or Internet Protocol (IP). Once a network communicates with another network having constant communication procedures, it’s called Internetworking. Internetworking was designed to resolve the matter of delivering a packet of information through many links.</p>
+
+<p>There a minute difference between extending the network and Internetworking. Merely exploitation of either a switch or a hub to attach 2 local area networks is an extension of LAN whereas connecting them via the router is associate degree example of Internetworking. Internetworking is enforced in Layer three (Network Layer) of OSI-ISO model. The foremost notable example of internetworking is that the Internet.</p>
+
+<p>There are chiefly 3 unit of Internetworking:</p>
+
+<ul>
+<li>Extranet</li>
+
+<li>Intranet</li>
+
+<li>Internet</li>
+</ul>
+
+<p>Intranets and extranets might or might not have connections to the net. If there is a connection to the net, the computer network or extranet area unit is usually shielded from being accessed from the net if it is not authorized. The net isn’t thought-about to be a section of the computer network or extranet, though it should function a portal for access to parts of associate degree extranet.</p>
+
+<p>Extranet – It’s a network of the internetwork that’s restricted in scope to one organization or entity however that additionally has restricted connections to the networks of one or a lot of different sometimes, however not essential. It’s very lowest level of Internetworking, usually enforced in an exceedingly personal area. Associate degree extranet may additionally be classified as a Man, WAN, or different form of network however it cannot encompass one local area network i.e. it should have a minimum of one reference to associate degree external network.</p>
+
+<p>Intranet – This associate degree computer network could be a set of interconnected networks, which exploits the Internet Protocol and uses IP-based tools akin to web browsers and FTP tools, that’s underneath the management of one body entity. That body entity closes the computer network to the remainder of the planet and permits solely specific users. Most typically, this network is the internal network of a corporation or different enterprise. An outsized computer network can usually have its own internet server to supply users with browseable data.</p>
+
+<p>Internet – A selected Internetworking, consisting of a worldwide interconnection of governmental, academic, public, and personal networks based mostly upon the Advanced analysis comes Agency Network (ARPANET) developed by ARPA of the U.S. Department of Defense additionally home to the World Wide Web (WWW) and cited as the ‘Internet’ to differentiate from all different generic Internetworks. Participants within the web, or their service suppliers, use IP Addresses obtained from address registries that management assignments.</p>
+
+<h4>Internetwork Addressing –</h4>
+
+<p>Internetwork addresses establish devices severally or as members of a bunch. Addressing schemes differ based on the protocol family and therefore the OSI layer. Three kinds of internetwork addresses area unit ordinarily used: data-link layer addresses, Media Access control (MAC) addresses, and network-layer addresses.</p>
+
+<p><b>Data Link Layer addresses:</b> A data-link layer address unambiguously identifies every physical network association of a network device. Data-link addresses typically area unit cited as physical or hardware addresses. Data-link addresses sometimes exist among a flat address area and have a pre-established and usually fastened relationship to a selected device. End systems usually have just one physical network association, and therefore have just one data-link address. Routers and different internetworking devices usually have multiple physical network connections and so eventually have multiple data-link addresses.</p>
+
+<p><b>MAC Addresses:</b> Media Access management (MAC) addresses encompass a set of data-link layer addresses. MAC addresses establish network entities in LANs that implement the IEEE MAC addresses of the data-link layer. MAC addresses different area unit distinctively for every local area network interface. MAC addresses are forty-eight bits long and are expressed in form of twelve hexadecimal digits. The primary half dozen hexadecimal digits, that are usually administered by the IEEE, establish the manufacturer or merchant and therefore comprise the Organizational Unique Identifier (OUI). The last half dozen positional notation digits comprise the interface serial variety or another price administered by the particular merchant. MAC addresses typically area unit referred to as burned-in addresses (BIAs) as a result of burned into read-only memory(ROM) and are traced into random-access memory (RAM) once the interface card initializes.</p>
+
+<p><b>Network-Layer Addresses:</b> Network addresses sometimes exist among a gradable address area and typically area unit referred to as virtual or logical addresses. the connection between a network address and a tool is logical and unfixed, it usually relies either on physical network characteristics or on groupings that don’t have any physical basis. finish systems need one network-layer address for every network-layer protocol they support. Routers and different Internetworking devices need one network-layer address per physical network association for every network-layer protocol supported.</p>
+
+<h4 style="color:navy">Challenges to Internetworking –</h4>
+
+<p>Implementing a useful internetwork isn’t at any certainty. There are several challenging fields, particularly in the areas of dependableness, connectivity, network management, and adaptability and each and every space is essential in establishing associate degree economical and effective internetwork. Few of them are:-</p>
+
+<p>The initial challenge lies when we are trying to connect numerous systems to support communication between disparate technologies. For example, Totally different sites might use different kinds of media, or they could operate at variable speeds.</p>
+
+<p>Another essential thought is reliable service that should be maintained in an internetwork. Individual users and whole organizations depend upon consistent, reliable access to network resources.</p>
+
+<p>Network management should give centralized support associate degreed troubleshooting capabilities in an internetwork. Configuration, security, performance, and different problems should be adequately addressed for the internetwork to perform swimmingly.</p>
+
+<p>Flexibility, the ultimate concern, is important for network enlargement and new applications and services, among different factors.</p>
+
+<h4>Network Addressing</h4>
+
+<p>When you configure the TCP/IP protocol on a Windows computer, the TCP/IP configuration settings require:</p>
+
+<ul>
+<li>An IP address</li>
+
+<li>A subnet mask</li>
+
+<li>A default gateway</li>
+</ul>
+
+<p>To configure TCP/IP correctly, it's necessary to understand how TCP/IP networks are addressed and divided into networks and subnetworks.</p>
+
+<p>The success of TCP/IP as the network protocol of the Internet is largely because of its ability to connect together networks of different sizes and systems of different types. These networks are arbitrarily defined into three main classes (along with a few others) that have predefined sizes. Each of them can be divided into smaller subnetworks by system administrators. A subnet mask is used to divide an IP address into two parts. One part identifies the host (computer), the other part identifies the network to which it belongs. To better understand how IP addresses and subnet masks work, look at an IP address and see how it's organized.</p>
+
+<h4>IP addresses: Networks and hosts</h4>
+
+<p>An IP address is a 32-bit number. It uniquely identifies a host (computer or other device, such as a printer or router) on a TCP/IP network.</p>
+
+<p>IP addresses are normally expressed in dotted-decimal format, with four numbers separated by periods, such as 192.168.123.132. To understand how subnet masks are used to distinguish between hosts, networks, and subnetworks, examine an IP address in binary notation.</p>
+
+<p>For example, the dotted-decimal IP address 192.168.123.132 is (in binary notation) the 32-bit number 110000000101000111101110000100. This number may be hard to make sense of, so divide it into four parts of eight binary digits.</p>
+
+<p>These 8-bit sections are known as octets. The example IP address, then, becomes 11000000.10101000.01111011.10000100. This number only makes a little more sense, so for most uses, convert the binary address into dotted-decimal format (192.168.123.132). The decimal numbers separated by periods are the octets converted from binary to decimal notation.</p>
+
+<p>For a TCP/IP wide area network (WAN) to work efficiently as a collection of networks, the routers that pass packets of data between networks don't know the exact location of a host for which a packet of information is destined. Routers only know what network the host is a member of and use information stored in their route table to determine how to get the packet to the destination host's network. After the packet is delivered to the destination's network, the packet is delivered to the appropriate host.</p>
+
+<p>For this process to work, an IP address has two parts. The first part of an IP address is used as a network address, the last part as a host address. If you take the example 192.168.123.132 and divide it into these two parts, you get 192.168.123. Network .132 Host or 192.168.123.0 - network address. 0.0.0.132 - host address.</p>
+
+<p>Subnet mask</p>
+
+<p>The second item, which is required for TCP/IP to work, is the subnet mask. The subnet mask is used by the TCP/IP protocol to determine whether a host is on the local subnet or on a remote network.</p>
+
+<p>In TCP/IP, the parts of the IP address that are used as the network and host addresses aren't fixed. Unless you have more information, the network and host addresses above can't be determined. This information is supplied in another 32-bit number called a subnet mask. The subnet mask is 255.255.255.0 in this example. It isn't obvious what this number means unless you know 255 in binary notation equals 11111111. So, the subnet mask is 11111111.11111111.11111111.0000000.</p>
+
+<p>Lining up the IP address and the subnet mask together, the network, and host portions of the address can be separated:</p>
+
+<p>11000000.10101000.01111011.10000100 - IP address (192.168.123.132)
+11111111.11111111.11111111.00000000 - Subnet mask (255.255.255.0)</p>
+
+<p>The first 24 bits (the number of ones in the subnet mask) are identified as the network address. The last 8 bits (the number of remaining zeros in the subnet mask) are identified as the host address. It gives you the following addresses:</p>
+
+<p>11000000.10101000.01111011.00000000 - Network address (192.168.123.0)
+00000000.00000000.00000000.10000100 - Host address (000.000.000.132)</p>
+
+<p>So now you know, for this example using a 255.255.255.0 subnet mask, that the network ID is 192.168.123.0, and the host address is 0.0.0.132. When a packet arrives on the 192.168.123.0 subnet (from the local subnet or a remote network), and it has a destination address of 192.168.123.132, your computer will receive it from the network and process it.</p>
+
+<p>Almost all decimal subnet masks convert to binary numbers that are all ones on the left and all zeros on the right. Some other common subnet masks are:</p>
+
+<p>Decimal Binary 255.255.255.192 1111111.11111111.1111111.11000000 255.255.255.224 1111111.11111111.1111111.11100000</p>
+
+<p>Internet RFC 1878 describes the valid subnets and subnet masks that can be used on TCP/IP networks.</p>
+
+<h4>Network classes</h4>
+
+<p>Internet addresses are allocated by the InterNIC, the organization that administers the Internet. These IP addresses are divided into classes. The most common of them are classes A, B, and C. Classes D and E exist, but aren't used by end users. Each of the address classes has a different default subnet mask. You can identify the class of an IP address by looking at its first octet. Following are the ranges of Class A, B, and C Internet addresses, each with an example address:</p>
+
+<p>Class A networks use a default subnet mask of 255.0.0.0 and have 0-127 as their first octet. The address 10.52.36.11 is a class A address. Its first octet is 10, which is between 1 and 126, inclusive.</p>
+
+<p>Class B networks use a default subnet mask of 255.255.0.0 and have 128-191 as their first octet. The address 172.16.52.63 is a class B address. Its first octet is 172, which is between 128 and 191, inclusive.</p>
+
+<p>Class C networks use a default subnet mask of 255.255.255.0 and have 192-223 as their first octet. The address 192.168.123.132 is a class C address. Its first octet is 192, which is between 192 and 223, inclusive.</p>
+
+<p>In some scenarios, the default subnet mask values don't fit the organization needs for one of the following reasons:</p>
+
+<p>The physical topology of the network</p>
+
+<p>The numbers of networks (or hosts) don't fit within the default subnet mask restrictions.</p>
+
+<p>The next section explains how networks can be divided using subnet masks.</p>
+
+<h4>Subnetting</h4>
+
+<p>A Class A, B, or C TCP/IP network can be further divided, or subnetted, by a system administrator. It becomes necessary as you reconcile the logical address scheme of the Internet (the abstract world of IP addresses and subnets) with the physical networks in use by the real world.</p>
+
+<p>A system administrator who is allocated a block of IP addresses may be administering networks that aren't organized in a way that easily fits these addresses. For example, you have a wide area network with 150 hosts on three networks (in different cities) that are connected by a TCP/IP router. Each of these three networks has 50 hosts. You are allocated the class C network 192.168.123.0. (For illustration, this address is actually from a range that isn't allocated on the Internet.) It means that you can use the addresses 192.168.123.1 to 192.168.123.254 for your 150 hosts.</p>
+
+<p>Two addresses that can't be used in your example are 192.168.123.0 and 192.168.123.255 because binary addresses with a host portion of all ones and all zeros are invalid. The zero address is invalid because it's used to specify a network without specifying a host. The 255 address (in binary notation, a host address of all ones) is used to broadcast a message to every host on a network. Just remember that the first and last address in any network or subnet can't be assigned to any individual host.</p>
+
+<p>You should now be able to give IP addresses to 254 hosts. It works fine if all 150 computers are on a single network. However, your 150 computers are on three separate physical networks. Instead of requesting more address blocks for each network, you divide your network into subnets that enable you to use one block of addresses on multiple physical networks.</p>
+
+<p>In this case, you divide your network into four subnets by using a subnet mask that makes the network address larger and the possible range of host addresses smaller. In other words, you are 'borrowing' some of the bits used for the host address, and using them for the network portion of the address. The subnet mask 255.255.255.192 gives you four networks of 62 hosts each. It works because in binary notation, 255.255.255.192 is the same as 1111111.11111111.1111111.11000000.</p> 
+
+<p>The first two digits of the last octet become network addresses, so you get the additional networks 00000000 (0), 01000000 (64), 10000000 (128) and 11000000 (192). (Some administrators will only use two of the subnetworks using 255.255.255.192 as a subnet mask. For more information on this topic, see RFC 1878.) In these four networks, the last six binary digits can be used for host addresses.</p>
+
+<p>Using a subnet mask of 255.255.255.192, your 192.168.123.0 network then becomes the four networks 192.168.123.0, 192.168.123.64, 192.168.123.128 and 192.168.123.192. These four networks would have as valid host addresses:</p>
+
+<p>192.168.123.1-62 192.168.123.65-126 192.168.123.129-190 192.168.123.193-254</p>
+
+<p>Remember, again, that binary host addresses with all ones or all zeros are invalid, so you can't use addresses with the last octet of 0, 63, 64, 127, 128, 191, 192, or 255.</p>
+
+<p>You can see how it works by looking at two host addresses, 192.168.123.71 and 192.168.123.133. If you used the default Class C subnet mask of 255.255.255.0, both addresses are on the 192.168.123.0 network. However, if you use the subnet mask of 255.255.255.192, they are on different networks; 192.168.123.71 is on the 192.168.123.64 network, 192.168.123.133 is on the 192.168.123.128 network.</p>
+
+<h4>Default gateways</h4>
+
+<p>If a TCP/IP computer needs to communicate with a host on another network, it will usually communicate through a device called a router. In TCP/IP terms, a router that is specified on a host, which links the host's subnet to other networks, is called a default gateway. This section explains how TCP/IP determines whether or not to send packets to its default gateway to reach another computer or device on the network.</p>
+
+<p>When a host attempts to communicate with another device using TCP/IP, it performs a comparison process using the defined subnet mask and the destination IP address versus the subnet mask and its own IP address. The result of this comparison tells the computer whether the destination is a local host or a remote host.</p>
+
+<p>If the result of this process determines the destination to be a local host, then the computer will send the packet on the local subnet. If the result of the comparison determines the destination to be a remote host, then the computer will forward the packet to the default gateway defined in its TCP/IP properties. It's then the responsibility of the router to forward the packet to the correct subnet.</p>
+
+<h4>Troubleshooting</h4>
+
+<p>TCP/IP network problems are often caused by incorrect configuration of the three main entries in a computer's TCP/IP properties. By understanding how errors in TCP/IP configuration affect network operations, you can solve many common TCP/IP problems.</p>
+
+<p><b>Incorrect Subnet Mask:</b> If a network uses a subnet mask other than the default mask for its address class, and a client is still configured with the default subnet mask for the address class, communication will fail to some nearby networks but not to distant ones. As an example, if you create four subnets (such as in the subnetting example) but use the incorrect subnet mask of 255.255.255.0 in your TCP/IP configuration, hosts won't be able to determine that some computers are on different subnets than their own. In this situation, packets destined for hosts on different physical networks that are part of the same Class C address won't be sent to a default gateway for delivery. A common symptom of this issue is when a computer can communicate with hosts that are on its local network and can talk to all remote networks except those networks that are nearby and have the same class A, B, or C address. To fix this problem, just enter the correct subnet mask in the TCP/IP configuration for that host.</p>
+
+<p><b>Incorrect IP Address:</b> If you put computers with IP addresses that should be on separate subnets on a local network with each other, they won't be able to communicate. They'll try to send packets to each other through a router that can't forward them correctly. A symptom of this problem is a computer that can talk to hosts on remote networks, but can't communicate with some or all computers on their local network. To correct this problem, make sure all computers on the same physical network have IP addresses on the same IP subnet. If you run out of IP addresses on a single network segment, there are solutions that go beyond the scope of this article.</p>
+
+<p><b>Incorrect Default Gateway:</b> A computer configured with an incorrect default gateway can communicate with hosts on its own network segment. But it will fail to communicate with hosts on some or all remote networks. A host can communicate with some remote networks but not others if the following conditions are true:</p>
+
+<p>A single physical network has more than one router.</p>
+
+<p>The wrong router is configured as a default gateway.</p>
+
+<p>This problem is common if an organization has a router to an internal TCP/IP network and another router connected to the Internet.</p>
+
+<h4>Routing</h4>
+
+<p>A Router is a process of selecting path along which the data can be transferred from source to the destination. Routing is performed by a special device known as a router.</p>
+
+<p>A Router works at the network layer in the OSI model and internet layer in TCP/IP model</p>
+
+<p>A router is a networking device that forwards the packet based on the information available in the packet header and forwarding table.</p>
+
+<p>The routing algorithms are used for routing the packets. The routing algorithm is nothing but a software responsible for deciding the optimal path through which packet can be transmitted.</p>
+
+<p>The routing protocols use the metric to determine the best path for the packet delivery. The metric is the standard of measurement such as hop count, bandwidth, delay, current load on the path, etc. used by the routing algorithm to determine the optimal path to the destination.</p>
+
+<p>The routing algorithm initializes and maintains the routing table for the process of path determination.</p>
+
+<h4>Routing Metrics and Costs</h4>
+
+<p>Routing metrics and costs are used for determining the best route to the destination. The factors used by the protocols to determine the shortest path, these factors are known as a metric.</p>
+
+<p>Metrics are the network variables used to determine the best route to the destination. For some protocols use the static metrics means that their value cannot be changed and for some other routing protocols use the dynamic metrics means that their value can be assigned by the system administrator.</p>
+
+<h4>The most common metric values are given below:</h4>
+
+<p><b>Hop count:</b> Hop count is defined as a metric that specifies the number of passes through internetworking devices such as a router, a packet must travel in a route to move from source to the destination. If the routing protocol considers the hop as a primary metric value, then the path with the least hop count will be considered as the best path to move from source to the destination.</p>
+
+<p><b>Delay:</b> It is a time taken by the router to process, queue and transmit a datagram to an interface. The protocols use this metric to determine the delay values for all the links along the path end-to-end. The path having the lowest delay value will be considered as the best path.</p>
+
+<p><b>Bandwidth:</b> The capacity of the link is known as a bandwidth of the link. The bandwidth is measured in terms of bits per second. The link that has a higher transfer rate like gigabit is preferred over the link that has the lower capacity like 56 kb. The protocol will determine the bandwidth capacity for all the links along the path, and the overall higher bandwidth will be considered as the best route.</p>
+
+<p><b>Load:</b> Load refers to the degree to which the network resource such as a router or network link is busy. A Load can be calculated in a variety of ways such as CPU utilization, packets processed per second. If the traffic increases, then the load value will also be increased. The load value changes with respect to the change in the traffic.</p>
+
+<p><b>Reliability:</b> Reliability is a metric factor may be composed of a fixed value. It depends on the network links, and its value is measured dynamically. Some networks go down more often than others. After network failure, some network links repaired more easily than other network links. Any reliability factor can be considered for the assignment of reliability ratings, which are generally numeric values assigned by the system administrator.</p>
+
+<h4>Types of Routing</h4>
+
+<p>Routing can be classified into three categories:</p>
+
+<ul>
+<li>Static Routing</li>
+
+<li>Default Routing</li>
+
+<li>Dynamic Routing</li>
+
+<li>Static Routing</li>
+</ul>
+
+<p>Static Routing is also known as Nonadaptive Routing.</p>
+
+<p>It is a technique in which the administrator manually adds the routes in a routing table.</p>
+
+<p>A Router can send the packets for the destination along the route defined by the administrator.</p>
+
+<p>In this technique, routing decisions are not made based on the condition or topology of the networks</p>
+
+<h4>Advantages Of Static Routing</h4>
+
+<p>Following are the advantages of Static Routing:</p>
+
+<p><b>No Overhead:</b> It has ho overhead on the CPU usage of the router. Therefore, the cheaper router can be used to obtain static routing.</p>
+
+<p><b>Bandwidth:</b> It has not bandwidth usage between the routers.</p>
+
+<p><b>Security:</b> It provides security as the system administrator is allowed only to have control over the routing to a particular network.</p>
+
+<h4>Disadvantages of Static Routing:</h4>
+
+<p>Following are the disadvantages of Static Routing:</p>
+
+<p>For a large network, it becomes a very difficult task to add each route manually to the routing table.</p>
+
+<p>The system administrator should have a good knowledge of a topology as he has to add each route manually.</p>
+
+<h4>Default Routing</h4>
+
+<p>Default Routing is a technique in which a router is configured to send all the packets to the same hop device, and it doesn't matter whether it belongs to a particular network or not. A Packet is transmitted to the device for which it is configured in default routing.</p>
+
+<p>Default Routing is used when networks deal with the single exit point.</p>
+
+<p>It is also useful when the bulk of transmission networks have to transmit the data to the same hp device.</p>
+
+<p>When a specific route is mentioned in the routing table, the router will choose the specific route rather than the default route. The default route is chosen only when a specific route is not mentioned in the routing table.</p>
+
+<h4>Dynamic Routing</h4>
+
+<p>It is also known as Adaptive Routing.</p>
+
+<p>It is a technique in which a router adds a new route in the routing table for each packet in response to the changes in the condition or topology of the network.</p>
+
+<p>Dynamic protocols are used to discover the new routes to reach the destination.</p>
+
+<p>In Dynamic Routing, RIP and OSPF are the protocols used to discover the new routes.</p>
+
+<p>If any route goes down, then the automatic adjustment will be made to reach the destination.</p>
+
+<p style="color: navy">The Dynamic protocol should have the following features:</p>
+
+<p>All the routers must have the same dynamic routing protocol in order to exchange the routes.</p>
+
+<p>If the router discovers any change in the condition or topology, then router broadcast this information to all other routers.</p>
+
+<h4>Advantages of Dynamic Routing:</h4>
+
+<p>It is easier to configure.</p>
+
+<p>It is more effective in selecting the best route in response to the changes in the condition or topology.</p>
+
+<h4>Disadvantages of Dynamic Routing:</h4>
+
+<p>It is more expensive in terms of CPU and bandwidth usage.</p>
+
+<p>It is less secure as compared to default and static routing.</p>
+</body>
+</html>
